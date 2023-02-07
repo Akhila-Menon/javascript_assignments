@@ -1,0 +1,12 @@
+{
+  "name": "interest-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
