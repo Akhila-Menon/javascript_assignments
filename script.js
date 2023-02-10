@@ -3,14 +3,26 @@ var specialization = [];
 
 function onSubmit() {
     validateControls();
-    console.log('ended');
 }
 
 function getControlValues() {
-    
+    document.getElementById('reg').classList.add('hidden');
+    document.getElementById('profile').classList.remove('hidden');
+    document.getElementById('name').innerHTML = "<span>" + fname + " " + lname +"</span>";
+    document.getElementById('gend').innerHTML = "<span>" + gender +"</span>";
+    document.getElementById('dateOfBirth').innerHTML = "<span>" + dob +"</span>";
+    document.getElementById('emailId').innerHTML = "<span>" + email +"</span>";
+    document.getElementById('number').innerHTML = "<span>" + mobile +"</span>";
+    document.getElementById('addr').innerHTML = "<span>" + address +"</span>";
+    document.getElementById('indian').innerHTML = "<span>" + isIndian +"</span>";
+    document.getElementById('accType').innerHTML = "<span>" + accountType +"</span>";
+
+    return true;
 }
 
-function validateControls() {
+document.getElementById('submitBtn').addEventListener("click", (e) => {
+    e.preventDefault();
+
     //FirstName
     fname = document.getElementById("firstname").value;
     if (fname == "") {
@@ -52,15 +64,6 @@ function validateControls() {
         mobile.focus();
         return false;
     }
-    
-    //Address
-    // var address = document.getElementById("address");
-    // if (address.value == "") {
-    //     window.alert("please enter your address details");
-    //     address.focus();
-    //     return false;
-    // }
-    // Password
     password = document.getElementById("password").value;
     if (password == "") {
         window.alert("please enter your password");
@@ -73,13 +76,6 @@ function validateControls() {
         password.focus();
         return false;
     }
-    // var gender = document.getElementById("gender");
-    // if (gender.selectedIndex < 1) {
-    //     window.alert("please provide your gender");
-    //     gender.focus();
-    //     return false;
-    // }
-
-    getControlValues();
-
-}
+    return getControlValues();
+    
+});
